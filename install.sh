@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-daili='https://git.metauniverse-cn.com/'
+daili=''
 
 if [ -d /ql/data/config ];then
     QLMainPath='/ql/data'
@@ -40,7 +40,7 @@ gitPull(){
     else
         rm -rf ${QLMainPath}/jbot/*
     fi
-    cd ${QLMainPath}/repo && rm -rf gd && git clone ${daili}https://github.com/curtinlv/gd.git
+    cd ${QLMainPath}/repo && rm -rf gd && git clone ${daili}https://hub.fastgit.xyz/abcdsys/gd.git
     cp -a ${QLMainPath}/repo/gd/* ${QLMainPath}/jbot && cp -a ${QLMainPath}/jbot/conf/* ${QLMainPath}/config && cp -a ${QLMainPath}/jbot/jk_script/* ${QLMainPath}/scripts
     rm -rf ${QLMainPath}/repo/dockerbot
     mkdir ${QLMainPath}/repo/dockerbot && ln -sf ${QLMainPath}/repo/gd ${QLMainPath}/repo/dockerbot/jbot && ln -sf ${QLMainPath}/repo/gd/conf ${QLMainPath}/repo/dockerbot/config
